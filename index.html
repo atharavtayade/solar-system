@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Interactive 3D Solar System</title>
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Import maps keep the Three.js module and its examples addon on the same version. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="app" aria-label="Interactive 3D Solar System">
+    <canvas id="scene" aria-label="Three.js 3D solar system scene"></canvas>
+    <div id="labelLayer" aria-hidden="true"></div>
+    <div id="tooltip" role="tooltip"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <h1>Solar System</h1>
+          <p>Drag, zoom, search, and inspect the planets</p>
+        </div>
+      </div>
+
+      <div class="toolbar" aria-label="Solar system controls">
+        <button id="pauseBtn" class="control-btn" type="button" aria-pressed="false">Pause</button>
+
+        <label class="speed-control" for="speedSlider">
+          <span>Speed</span>
+          <input id="speedSlider" type="range" min="0" max="5" step="0.05" value="1" />
+          <output id="speedValue" for="speedSlider">1.00×</output>
+        </label>
+
+        <button id="orbitToggle" class="control-btn" type="button" aria-pressed="true">Orbits On</button>
+        <button id="resetCameraBtn" class="control-btn" type="button">Reset Camera</button>
+        <button id="fullscreenBtn" class="control-btn" type="button">Fullscreen</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="panel search-panel" aria-labelledby="searchTitle">
+        <h2 id="searchTitle">Explore</h2>
+        <label class="field-label" for="searchBox">Search planets</label>
+        <input id="searchBox" type="search" placeholder="Mercury, Earth, Saturn..." autocomplete="off" />
+        <nav id="planetList" class="planet-list" aria-label="Planet list"></nav>
+      </section>
+
+      <section id="infoPanel" class="info-panel" aria-live="polite" aria-label="Selected planet information">
+        <div class="empty-state">
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <h2>Select a planet</h2>
+          <p>Click a planet in the scene or choose one from the list to focus the camera and view facts.</p>
+        </div>
+      </section>
+    </aside>
+
+    <footer class="hintbar">
+      <span>Left drag: rotate camera</span>
+      <span>Right drag: pan camera</span>
+      <span>Wheel: smooth zoom</span>
+      <span>Drag a planet: inspect, then release to return to orbit</span>
+    </footer>
+  </main>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
