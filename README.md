@@ -1,4 +1,4 @@
-# �� Interactive 3D Solar System
+# 🪐 Interactive 3D Solar System
 
 ## Live Demo
 
