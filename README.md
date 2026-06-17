@@ -92,13 +92,7 @@ If your browser blocks module loading from the file system, use the local server
 | Enter fullscreen | Fullscreen button |
 | Search planets | Search box in the sidebar |
 
-## Screenshots
-
-Screenshots are not currently included in the repository. Suggested captures for future releases:
-
-- Overview of the full solar-system scene
-- Focused planet view with the information panel open
-- Fullscreen or mobile layout view
+`\n## Screenshots\n\nHigh-quality visual documentation of the core features:\n\n![Full Solar System Overview](./assets/screenshots/overview_all_planets.png)\n*Full Solar System Overview*\n\n![Jupiter Information Panel](./assets/screenshots/detail_jupiter_info.png)\n*Jupiter Information Panel*\n\n![Interactive Controls and Features](./assets/screenshots/feature_showcase.png)\n*Interactive Controls and Features*\n`
 
 ## Author
 
